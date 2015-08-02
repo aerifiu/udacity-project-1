@@ -58,13 +58,15 @@ public class OverviewFragment extends Fragment implements AdapterView.OnItemClic
 		super.onCreate(savedInstanceState);
 		setHasOptionsMenu(true);
 
-		if (savedInstanceState == null) {
-			getActivity().startService(FetchMoviesIntentService.getIntent(getActivity(), FetchMoviesIntentService.SortOrder.POPULARITY));
-		}
-
-		String sortOrderStr = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(AppConstants.SHARED_PREF_SORT_ORDER,
+		final String sortOrderStr = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(AppConstants
+						.SHARED_PREF_SORT_ORDER,
 				FetchMoviesIntentService.SortOrder.POPULARITY.toString());
 		sortOrder = FetchMoviesIntentService.SortOrder.fromString(sortOrderStr);
+
+		if (savedInstanceState == null) {
+			getActivity().startService(FetchMoviesIntentService.getIntent(getActivity(), sortOrder));
+		}
+
 	}
 
 	@Override
