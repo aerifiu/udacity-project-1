@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+	<!-- note: tools:text is for devs only and should not got to strings.xml -->
+
+	<FrameLayout
+		android:id="@+id/fragment_movies_detail_header"
+		android:layout_width="match_parent"
+		android:layout_height="120dip">
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@color/orange"/>
+
+		<TextView
+			android:id="@+id/fragment_movies_detail_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_marginLeft="@dimen/layout_border_margin"
+			android:maxLength="38"
+			android:textColor="@color/white"
+			android:textSize="36sp"
+			tools:text="Lorem ipsum dolor sit amet pad thai gai med knoflook"/>
+	</FrameLayout>
+
+	<ScrollView
+		android:id="@+id/fragment_movies_detail_scroll_view"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="180dip"
+				android:layout_margin="@dimen/layout_border_margin"
+				android:orientation="horizontal">
+
+				<ImageView
+					android:id="@+id/fragment_movies_detail_poster"
+					android:layout_width="120dip"
+					android:layout_height="match_parent"
+					android:scaleType="centerCrop"
+					tools:background="@drawable/ic_shape_rect"/>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="@dimen/layout_border_margin"
+					android:orientation="vertical">
+
+					<TextView
+						android:id="@+id/fragment_movies_detail_date"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/orange"
+						android:textSize="28sp"
+						tools:text="1503"/>
+
+					<TextView
+						android:id="@+id/fragment_movies_detail_vote_avg"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/orange"
+						android:textSize="12sp"
+						tools:text="8.1/10"/>
+
+				</LinearLayout>
+			</LinearLayout>
+
+			<TextView
+				android:id="@+id/fragment_movies_detail_overview"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/layout_border_margin"
+				android:layout_marginLeft="@dimen/layout_border_margin"
+				android:layout_marginRight="@dimen/layout_border_margin"
+				tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>
